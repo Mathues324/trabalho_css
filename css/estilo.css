@@ -1,0 +1,542 @@
+section {
+    min-height: 100vh;
+}
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo do corpo da página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F3C1B3;
+}
+
+/* Menu sticky */
+.menu-sticky {
+    position: sticky;
+    top: 0;
+    background-color: #d23baf62;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    height: 55px;
+    /* Altura definida explicitamente */
+}
+
+.menu-sticky nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+.menu-sticky nav a:hover {
+    color: #CC2E5D;
+}
+
+#logo {
+    width: 40px;
+}
+
+/* Seções - são as âncoras */
+.secao {
+    padding: 10px;
+    min-height: 100vh;
+    text-align: center;
+    scroll-margin-top: 60px;
+    /* Corresponde à altura do menu */
+}
+
+p {
+    font-family: 'open sans';
+}
+
+#home {
+    background-image: url(../imagens/122277814_1062863550816708_8866908315830331914_n.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+#home>div>h1 {
+    font-family: 'Playfair Display';
+    color: #ffffff;
+    padding: 2px;
+    font-weight: bold;
+}
+
+#div_img {
+    text-align: center;
+    color: white;
+    background-color: rgba(210, 59, 175, 0.169);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#agendar {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #CC2E5D;
+    color: white;
+    padding: 15px 27px;
+    border-radius: 30px;
+    font-weight: bolder;
+    cursor: pointer;
+    text-align: center;
+}
+
+#agendar:hover {
+    background-color: #DF7C8C;
+}
+
+
+#sobre {
+    background-color: #fce4ec;
+}
+
+/*inicio do mosaico*/
+.mosaico_sobre {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1.5fr;
+    grid-template-areas:
+        "img1 img2 img4"
+        "img1 img3 img5"
+}
+
+@media (width < 900px) {
+    .mosaico_sobre {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas:
+            "img1 img5"
+    }
+
+    #img2,
+    #img3,
+    #img4 {
+        display: none;
+    }
+}
+
+@media (max-width: 658px) {
+    .mosaico_sobre {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+            "img5";
+        gap: 15px;
+        justify-items: center;
+    }
+
+    #img1,
+    #img2,
+    #img3,
+    #img4 {
+        display: none;
+    }
+
+    #img5 {
+        grid-area: img5;
+        width: 90vw;
+        max-width: 350px;
+        height: auto;
+        margin: 0 auto;
+        border-radius: 12px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.10);
+        /*Achei esse efeito de transição muito bonito e deu um toque na  imagem  ele faz uma sombra de um 'roxo' quando o mausem tá em cima quase que impercepitivel */
+    }
+
+    #img5:hover {
+        box-shadow: 0 8px 24px rgba(204, 46, 93, 0.18);
+    }
+}
+
+#img1 {
+    grid-area: img1;
+}
+
+#img2 {
+    grid-area: img2;
+}
+
+#img3 {
+    grid-area: img3;
+}
+
+#img4 {
+    grid-area: img4;
+}
+
+#img5 {
+    grid-area: img5;
+    height: 300px;
+}
+
+img.img_sobre_nos {
+    width: 300px;
+    height: 200px;
+    height: auto;
+    border-radius: 10px;
+}
+
+/*fim do mosaico*/
+#sobre>div>p {
+    text-align: justify;
+    font-family: 'open sans';
+    font-size: 18px;
+    text-indent: 15px;
+    padding: 7px;
+}
+
+#sobre>div>h2 {
+    font-family: 'Playfair Display';
+    color: #CC2E5D;
+    font-weight: bolder;
+    font-size: 30px;
+}
+
+#servicos {
+    background-color: #f3c1b39a;
+    padding: 40px 20px;
+}
+
+#servicos h2 {
+    font-family: 'Playfair Display';
+    color: #CC2E5D;
+    margin-bottom: 30px;
+}
+
+.servicos-flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.servico {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s;/*tempo até a transição*/
+}
+
+.servico:hover {
+    transform: scale(1.05);/*muda o tamanho do elemento quando o mouse passa por cima */
+    box-shadow: 0px 0px 15px rgba(204, 46, 93, 0.2);
+    /*aumenta a sombra quando o mouse passa por cima */
+}
+
+.servico img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 15px;
+}
+
+.servico h3 {
+    color: #CC2E5D;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.servico p {
+    font-size: 14px;
+    color: #444;
+}
+
+/*div do banner*/
+.div_container {
+background: linear-gradient(to right, #f3c1b3 0%, #df7c8c 100%);
+
+    width: 100%;
+    overflow: hidden;
+    /* esconde a imagem quando sair da área */
+    height: 230px;
+    position: relative;
+
+}
+
+.imagem-animada {
+    position: absolute;
+    top: 50%;
+    left: -150px;
+    /* começa fora da tela à esquerda (ajusta conforme largura da imagem) */
+    transform: translateY(-50%);
+    width: 150px;
+    height: auto;
+    /* ajuste conforme a sua imagem */
+    animation: andar 7s linear infinite;
+}
+
+/*fim do banner*/
+/*outros serviços*/
+.outros_servicoes {
+    background-color: #f3c1b39a;
+}
+
+.titulo_de_outros {
+    font-family: 'Playfair Display';
+    color: #CC2E5D;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.carousel {
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+.carousel-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+}
+
+.carousel-item img {
+    height: 400px;
+    object-fit: cover;
+    width: 100%;
+    max-width: 800px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/*fim dos outros serviços*/
+/*estilos da tabela bostrap*/
+#titulo_da_tabela {
+    font-family: 'Playfair Display';
+    color: #CC2E5D;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/*fim dos estilos da tabela bostrap*/
+
+
+/*inicio do formulario--contato*/
+#contato {
+    background-color: #fce4ec;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.container-contato {
+    max-width: 600px;
+    margin: auto;
+}
+
+#form-contato input,
+#form-contato textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-family: 'Open Sans';
+}
+
+.form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 17px;
+    justify-items: center;
+}
+
+.img_form {
+    width: 100%;
+    height: 100%;
+    max-width: 350px;
+}
+
+@media (width <650px) {
+    .form {
+        grid-template-columns: 1fr;
+        /* pra espeficiar o tamanho das colunas*/
+    }
+}
+
+#form-contato button {
+    background-color: #CC2E5D;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#form-contato button:hover {
+    background-color: #df7c8c;
+}
+
+.sua_mensagem {
+    resize: none;
+}
+
+.form-select {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-family: 'Open Sans';
+}
+
+:hover .form-select {
+    border-color: #CC2E5D;
+}
+
+#rodape {
+    background-color: #d23baf62;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-family: 'Open Sans';
+}
+
+.redes-sociais {
+    margin-top: 10px;
+}
+
+.redes-sociais a {
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.redes-sociais img {
+    width: 30px;
+    height: 30px;
+}
+
+/*animaçõe*/
+/* VÃO FICAR AQUI  */
+/*funções de animação */
+@keyframes girarBorda {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes mexeContato {
+    0% {
+        transform: translateX(0px);
+    }
+
+    25% {
+        transform: translateX(-10px);
+    }
+
+    50% {
+        transform: translateX(10px);
+    }
+
+    75% {
+        transform: translateX(-10px);
+    }
+
+    100% {
+        transform: translateX(0px);
+    }
+}
+@keyframes andar {
+    0% {
+        left: -150px;
+        /* fora da tela à esquerda */
+    }
+
+    100% {
+        left: 100%;
+        /* sai da tela à direita */
+    }
+}
+/*onde a função tá sendo aplicada */
+/*botão de enviar*/
+.enviar {
+    position: relative;
+    padding: 15px 40px;
+    background-color: #CC2E5D;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.enviar::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: conic-gradient(#ffffff, #df7c8c, #ffffff);
+    border-radius: 30px;
+    z-index: -1;
+    animation: girarBorda 2s linear infinite;
+    /* Máscara para aparecer só a borda */
+    mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+    -webkit-mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+    mask-composite: exclude;
+    -webkit-mask-composite: destination-out;
+    padding: 2px;
+}
+
+.enviar:hover {
+    background-color: #df7c8c;
+    color: white;
+}
+
+/*fim do botão de enviar*/
+/*titulo animado*/
+.titulo-animado {
+    display: inline-block;
+    animation: mexeContato 2s infinite ease-in-out;
+    color: #CC2E5D;
+    font-weight: bold;
+    font-family: 'Playfair Display';
+}
+/*fim do botão*/
+/*efeito scroll */
+.animada{
+  opacity: 0.4;
+  filter: blur(2px);
+  transition: all 0.5s ease;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.animada:target {
+  opacity: 1;
+  filter: none;
+  transition: all 0.5s ease;
+}
+/*  Efeito para destacar a seção ativa via :target, 
+  deixando as outras semi-transparentes e desfocadas.
+*/
